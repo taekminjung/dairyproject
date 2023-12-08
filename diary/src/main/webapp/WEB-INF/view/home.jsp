@@ -55,15 +55,17 @@
 			<a href="${nextUrl}">다음달</a>
 		</div>
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;" >
+		  <thead class="table-success">
 			<tr>
-				<th width="15%">일</th>
+				<th width="15%" style= "color:red">일</th>
 				<th width="15%">월</th>
 				<th width="15%">화</th>
 				<th width="15%">수</th>
 				<th width="15%">목</th>
 				<th width="15%">금</th>
-				<th width="15%">토</th>
+				<th width="15%" style= "color: blue">토</th>
 			</tr>
+		</thead>
 			<tr>
 				<c:forEach var="i" begin="1" end="${calendarMap.totalTd}" step="1">
 					<c:set var="d" value="${(i - calendarMap.beginBlank)}"></c:set>
