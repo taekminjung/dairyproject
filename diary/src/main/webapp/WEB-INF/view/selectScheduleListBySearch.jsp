@@ -6,23 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.button {
-  background-color: white;;
-  color: black; 
-  border: 2px solid #008CBA;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 2px 1px;
-  cursor: pointer;
-}
-  a {
-  	  text-decoration: none;
-  }
-</style>
   <!-- [jQuery] -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
@@ -34,11 +17,18 @@
 
 </head>
 <body>
+<div>&nbsp;</div>
 	<div class="container" align="center">
 	<h1>안녕하세요!! <mark>${loginMember.memberId}</mark>님</h1>
-	<a href="${pageContext.request.contextPath}/noticeList" class="button" >공지사항</a>
-	<a href="${pageContext.request.contextPath}/home"  class="button" >홈으로</a>
-	<a href="${pageContext.request.contextPath}/logout"  class="button" >로그아웃</a>
+	<div>&nbsp;</div>
+	<div class="btn-group btn-group-sm">
+	<a href="${pageContext.request.contextPath }/home" class="btn btn-outline-success" >홈으로</a>
+	<a href="${pageContext.request.contextPath}/selectScheduleListBySearch" class="btn btn-outline-success" >일정 검색</a>
+	<a href="${pageContext.request.contextPath}/noticeList" class="btn btn-outline-success" >공지사항</a>
+	<a href="${pageContext.request.contextPath}/updatePw"  class="btn btn-outline-success" >비밀번호 수정</a>
+	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
+	</div>
+	<div>&nbsp;</div>
 		<br><h1>일정 검색</h1><br>
 		<div>
 			<form action="${pageContext.request.contextPath }/selectScheduleListBySearch" method="get">
@@ -60,8 +50,8 @@
 						<option value="${d }">${d }</option>
 					</c:forEach>
 				</select>일
-				<button class="button">검색</button>
-			</form> 
+				<button class="btn-sm btn-outline-success" >검색</button>
+			</form>
 		</div><br>
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<tr>
@@ -78,17 +68,17 @@
 			</c:forEach>
 		</table>
 		<div>
-			<c:if test="${currentPage - 1 > 0 }">
-				<a href="${pageContext.request.contextPath }/selectScheduleListBySearch?currentPage=${currentPage - 1}&year=${year }&month=${month }&date=${date }" class="btn btn-outline-dark">이전</a>
+			<c:if test="${currentPage  > 1 }">
+				<a href="${pageContext.request.contextPath }/selectScheduleListBySearch?currentPage=${currentPage - 1}&year=${year }&month=${month }&date=${date }" class="btn-sm btn-outline-success">이전</a>
 			</c:if>
-			<c:if test="${!(currentPage - 1 > 0) }">
-				<button class="button" disabled>이전</button>
+			<c:if test="${!(currentPage  > 0) }">
+				<button class="btn-sm btn-outline-success"  disabled>이전</button>
 			</c:if>
 			<c:if test="${currentPage < lastPage}">
-				<a href="${pageContext.request.contextPath }/selectScheduleListBySearch?currentPage=${currentPage + 1}&year=${year }&month=${month }&date=${date }" class="btn btn-outline-dark">다음</a>
+				<a href="${pageContext.request.contextPath }/selectScheduleListBySearch?currentPage=${currentPage + 1}&year=${year }&month=${month }&date=${date }" class="btn-sm btn-outline-success">다음</a>
 			</c:if>
 			<c:if test="${!(currentPage < lastPage)}">
-				<button class="button" disabled>다음</button>
+				<button class="btn-sm btn-outline-success"  disabled>다음</button>
 			</c:if>
 		</div>
 	</div>

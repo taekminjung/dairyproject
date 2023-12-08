@@ -12,47 +12,35 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <meta charset="UTF-8">
 <title>다이어리 프로젝트 Home</title>
-<style>
-.button {
-  background-color: white;;
-  color: black; 
-  border: 2px solid #008CBA;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 2px 1px;
-  cursor: pointer;
-}
-  a {
-  	  text-decoration: none;
-  }
-</style>
 </head>
 <body style="text-align: center;">
+<!-- 상단 메뉴바 -->
+<div>&nbsp;</div>
 	<h1>안녕하세요!! <mark>${loginMember.memberId}</mark>님</h1>
-	<a href="${pageContext.request.contextPath}/selectScheduleListBySearch" class="button" >일정 검색</a>
-	<a href="${pageContext.request.contextPath}/noticeList" class="button" >공지사항</a>
-	<a href="${pageContext.request.contextPath}/updatePw"  class="button" >비밀번호 수정</a>
-	<a href="${pageContext.request.contextPath}/logout"  class="button" >로그아웃</a>
-	
-	
+	<div>&nbsp;</div>
+	<div class="btn-group btn-group-sm">
+	<a href="${pageContext.request.contextPath}/selectScheduleListBySearch" class="btn btn-outline-success" >일정 검색</a>
+	<a href="${pageContext.request.contextPath}/noticeList" class="btn btn-outline-success" >공지사항</a>
+	<a href="${pageContext.request.contextPath}/updatePw"  class="btn btn-outline-success" >비밀번호 수정</a>
+	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
+	</div>
+	<div>&nbsp;</div>
 	<!--  달력 출력 -->
 	<div>
 		<h1>${calendarMap.targetY}년 ${calendarMap.targetM+1}월</h1>
 	</div>	
 	<div>
-			<a href="${pageContext.request.contextPath}/home?targetY=${calendarMap.targetY}&targetM=${calendarMap.targetM-1}">이전달</a>
+			<a href="${pageContext.request.contextPath}/home?targetY=${calendarMap.targetY}&targetM=${calendarMap.targetM-1}" class="btn-sm btn-outline-success" >이전달</a>
 			
 			<!-- 만약 href속성값 매개값이 많으면 c:url jstl을 사용하면 가독성 높일 수 있다 -->
 			<c:url var = "nextUrl" value="/home">
 				<c:param name="targetY" value="${calendarMap.targetY}"></c:param>
 				<c:param name="targetM" value="${calendarMap.targetM+1}"></c:param>	
 			</c:url>
-			<a href="${nextUrl}">다음달</a>
+			<a href="${nextUrl}" class="btn-sm btn-outline-success" >다음달</a>
 		</div>
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;" >
 		  <thead class="table-success">

@@ -28,7 +28,7 @@
 				<td><input type="text" name="newMemberPw"></td>
 			</tr>
 			</table>
-			<button>변경하기</button>
+			<button class="btn btn-outline-success" >변경하기</button>
 		</form>
 </body>
 </html>

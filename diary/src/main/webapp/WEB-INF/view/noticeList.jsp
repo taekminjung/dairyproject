@@ -30,11 +30,19 @@
 </style>
 </head>
 <body style="text-align: center;">
+<div>&nbsp;</div>
 	<h1>안녕하세요!!</h1>
-		현재 페이지 : <span class="badge bg-warning">${currentPage}</span><br>
-		<a href="${pageContext.request.contextPath }/home" class="button" >홈으로</a>
-		<a href="${pageContext.request.contextPath}/updatePw"  class="button" >비밀번호 수정</a>
-		<a href="${pageContext.request.contextPath }/logout" class="button" >로그아웃</a>
+	<div>&nbsp;</div>
+		현재 페이지 : <span class="badge bg-warning">${currentPage}</span>
+		<div>&nbsp;</div>
+		<div class="btn-group btn-group-sm">
+		<a href="${pageContext.request.contextPath }/home" class="btn btn-outline-success" >홈으로</a>
+	<a href="${pageContext.request.contextPath}/selectScheduleListBySearch" class="btn btn-outline-success" >일정 검색</a>
+	<a href="${pageContext.request.contextPath}/noticeList" class="btn btn-outline-success" >공지사항</a>
+	<a href="${pageContext.request.contextPath}/updatePw"  class="btn btn-outline-success" >비밀번호 수정</a>
+	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
+	</div>
+	<div>&nbsp;</div>
 	<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 					<tr>
 					<th >NO</th>
@@ -48,17 +56,17 @@
 					
                     <td>
                     <c:if test="${loginMember.memberLevel eq 1}">
-                    <a href="${pageContext.request.contextPath}/updateNotice?noticeNo=${n.getNoticeNo()}" class="btn btn-outline-info" >수정</a>
-                    	<a href="${pageContext.request.contextPath}/deleteNotice?noticeNo=${n.getNoticeNo()}" class="btn btn-outline-info">삭제</a>
+                    <a href="${pageContext.request.contextPath}/updateNotice?noticeNo=${n.getNoticeNo()}" class="btn-sm btn-outline-success"  >수정</a>
+                    	<a href="${pageContext.request.contextPath}/deleteNotice?noticeNo=${n.getNoticeNo()}" class="btn-sm btn-outline-success" >삭제</a>
                     </c:if>
                     </td>
 				</tr>
 				</c:forEach>
 			</table>
 			<c:if test="${currentPage > 1}">
-		<a href="${pageContext.request.contextPath}/noticeList?currentPage=${currentPage - 1}" class="button" >이전</a>
+		<a href="${pageContext.request.contextPath}/noticeList?currentPage=${currentPage - 1}" class="btn-sm btn-outline-success"  >이전</a>
 		</c:if>
-		<a href="${pageContext.request.contextPath}/noticeList?currentPage=${currentPage + 1}" class="button" >다음</a>
+		<a href="${pageContext.request.contextPath}/noticeList?currentPage=${currentPage + 1}" class="btn-sm btn-outline-success"  >다음</a>
 		<c:if test="${loginMember.memberLevel eq 1}">
 			<form action="${pageContext.request.contextPath}/addNotice" method="post">
 			<div style="text-align: center;">
@@ -71,7 +79,7 @@
 				비밀번호:<input type="text" name="noticePw">
 				</div>
 			<div style="text-align: center;">
-				<button class="button" type="submit">공지사항 추가</button>
+				<button class="btn btn-outline-success"  type="submit">공지사항 추가</button>
 			</div>
 			</form>
 		  </c:if>

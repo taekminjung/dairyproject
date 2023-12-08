@@ -90,7 +90,7 @@ public class ScheduleController {
 			model.addAttribute("list", list);
 		return "scheduleListByWord";
 	}
-	//연월일 검색
+	//연월일로 검색
 		@GetMapping("/selectScheduleListBySearch")
 		public String selectScheduleListBySearch(Model model, HttpSession session,
 										@RequestParam(defaultValue = "1")int currentPage,
