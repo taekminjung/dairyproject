@@ -58,11 +58,11 @@
 		  <thead class="table-success">
 			<tr>
 				<th width="15%" style= "color:red">일</th>
-				<th width="15%">월</th>
-				<th width="15%">화</th>
-				<th width="15%">수</th>
-				<th width="15%">목</th>
-				<th width="15%">금</th>
+				<th width="15%" style= "color:white">월</th>
+				<th width="15%" style= "color:white">화</th>
+				<th width="15%" style= "color:white">수</th>
+				<th width="15%" style= "color:white">목</th>
+				<th width="15%" style= "color:white">금</th>
 				<th width="15%" style= "color: blue">토</th>
 			</tr>
 		</thead>
