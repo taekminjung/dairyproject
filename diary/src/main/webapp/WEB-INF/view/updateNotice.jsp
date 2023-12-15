@@ -42,7 +42,7 @@
 					<td><input type="text" name="noticePw"></td>
 				</tr>
 		</table>
-		<button  class="button">수정</button>
+		<button  class="btn btn-outline-success" >수정</button>
 		</form>
 </body>
 </html>

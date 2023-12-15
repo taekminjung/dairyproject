@@ -14,20 +14,7 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.button {
-  background-color: white;;
-  color: black; 
-  border: 2px solid #008CBA;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 2px 1px;
-  cursor: pointer;
-}
-</style>
+
 </head>
 <body style="text-align: center;">
 	<h1> 공지사항 삭제</h1>
@@ -38,7 +25,7 @@
 				</tr>
 			</table>
 			<input type="hidden" name="noticeNo" value="${notice.getNoticeNo()}">
-			<button  class="button">삭제</button>
+			<button  class="btn btn-outline-success" >삭제</button>
 		</form>
 		
 </body>

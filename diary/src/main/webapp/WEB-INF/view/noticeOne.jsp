@@ -15,26 +15,13 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.button {
-  background-color: white;;
-  color: black; 
-  border: 2px solid #008CBA;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 2px 1px;
-  cursor: pointer;
-}
-</style>
+
 </head>
 <body style="text-align: center;">
 <h1>안녕하세요 <mark>${loginMember.memberId}</mark>님</h1>
 	<h2>공지 상세보기</h2>
-	<a href="${pageContext.request.contextPath }/home" class="button" >홈으로</a>
-	<a href="${pageContext.request.contextPath }/logout" class="button" >로그아웃</a>
+	<a href="${pageContext.request.contextPath }/home" class="btn btn-outline-success" >홈으로</a>
+	<a href="${pageContext.request.contextPath }/logout" class="btn btn-outline-success" >로그아웃</a>
 		<table  class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<tr>
 				<th width="10%">번호</th>
@@ -68,7 +55,7 @@
 				<td><a href="${pageContext.request.contextPath}/deleteComment?commentNo=${c.getCommentNo()}&noticeNo=${ resultNotice.getNoticeNo()}">삭제</a></td>
 			</tr>
 			</c:when>
-			<c:when test="${c.isSecret =='Y' &&(Member.getMemberId() == c.getMemberId()  || Member.getMemberLevel() > 0)}">
+			<c:when test="${c.isSecret eq 'Y' && (Member.getMemberId() == c.getMemberId()  || Member.getMemberLevel() > 0)}">
 			<tr>
 				<td>${c.getCommentNo()}</td>
 				<td>${c.getCommentContent()}</td>
@@ -76,7 +63,7 @@
 				<td><a href="${pageContext.request.contextPath}/deleteComment?commentNo=${c.getCommentNo()}&noticeNo=${ resultNotice.getNoticeNo()}">삭제</a></td>
 			</tr>
 			</c:when>
-			<c:when test="${c.isSecret =='Y' }">
+			<c:when test="${c.isSecret eq 'Y' }">
 			<tr>
 			<td>${c.getCommentNo()}</td>
 			<td>비밀 댓글 입니다.</td>
@@ -104,7 +91,7 @@
 						</tr>
 						
 				</table>
-				<button class="button"> 추가</button>
+				<button class="btn btn-outline-success" > 추가</button>
 			</form>
 
 </body>

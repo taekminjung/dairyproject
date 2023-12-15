@@ -15,10 +15,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="text-align: center;">
 		<div><h1>비밀번호 수정</h1></div>
 		<form method="post">
-			<table>
+			<table align= "center">
 			<tr>
 				<th>현재 비밀번호</th>
 				<th>변경할 비밀번호</th>
