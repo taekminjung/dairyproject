@@ -31,6 +31,7 @@
 </style>
 </head>
 <body style="text-align: center;">
+<h1>안녕하세요 <mark>${loginMember.memberId}</mark>님</h1>
 	<h2>공지 상세보기</h2>
 	<a href="${pageContext.request.contextPath }/home" class="button" >홈으로</a>
 	<a href="${pageContext.request.contextPath }/logout" class="button" >로그아웃</a>
@@ -58,13 +59,34 @@
 				<th width="5%">댓글 삭제</th>
 			</tr>
 			<c:forEach var="c" items="${com}">
+		<c:choose>
+		<c:when test="${c.isSecret =='N' }">
 			<tr>
 				<td>${c.getCommentNo()}</td>
 				<td>${c.getCommentContent()}</td>
 				<td><a href="${pageContext.request.contextPath}/updateComment?commentNo=${c.getCommentNo()}&noticeNo=${ resultNotice.getNoticeNo()}">수정</a></td>
 				<td><a href="${pageContext.request.contextPath}/deleteComment?commentNo=${c.getCommentNo()}&noticeNo=${ resultNotice.getNoticeNo()}">삭제</a></td>
-			</c:forEach>
 			</tr>
+			</c:when>
+			<c:when test="${c.isSecret =='Y' &&(Member.getMemberId() == c.getMemberId()  || Member.getMemberLevel() > 0)}">
+			<tr>
+				<td>${c.getCommentNo()}</td>
+				<td>${c.getCommentContent()}</td>
+				<td><a href="${pageContext.request.contextPath}/updateComment?commentNo=${c.getCommentNo()}&noticeNo=${ resultNotice.getNoticeNo()}">수정</a></td>
+				<td><a href="${pageContext.request.contextPath}/deleteComment?commentNo=${c.getCommentNo()}&noticeNo=${ resultNotice.getNoticeNo()}">삭제</a></td>
+			</tr>
+			</c:when>
+			<c:when test="${c.isSecret =='Y' }">
+			<tr>
+			<td>${c.getCommentNo()}</td>
+			<td>비밀 댓글 입니다.</td>
+			<td></td>
+			<td></td>
+			</tr>
+			</c:when>
+		</c:choose>
+			</c:forEach>
+
 		</table>
 
 		<h1> 댓글 추가하기</h1>

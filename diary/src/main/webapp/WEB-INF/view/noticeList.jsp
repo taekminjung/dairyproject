@@ -31,7 +31,7 @@
 </head>
 <body style="text-align: center;">
 <div>&nbsp;</div>
-	<h1>안녕하세요!!</h1>
+	<h1>안녕하세요!! <mark>${loginMember.memberId}</mark>님</h1>
 	<div>&nbsp;</div>
 		현재 페이지 : <span class="badge bg-warning">${currentPage}</span>
 		<div>&nbsp;</div>

@@ -3,6 +3,7 @@
 <mapper namespace="com.example.diary.mapper.CommentMapper">
 	<select id="selectCommentList" parameterType="java.util.Map" resultType="com.example.diary.vo.Comment">
 		SELECT comment_no commentNo,
+						member_id memberId,
 						notice_no noticeNo,
 						comment_content commentContent,
 						is_secret isSecret,

@@ -12,6 +12,7 @@ import com.example.diary.vo.Notice;
 public interface NoticeMapper {
 	//목록(페이징)
 		List<Notice> selectNoticeList(Map<String, Object> paramMap);
+
 	//상세보기
 	Notice selectNoticeOne(Notice paramNotice);
 	//입력
@@ -22,4 +23,6 @@ public interface NoticeMapper {
 	int updateNotice(Notice notice);
 	//공지사항 상세보기에 댓글리스트 출력
 	List<Comment> selectCommentList(Map<String, Object> paramMap) ;
+	//공지사항에 첨부파일 갯수 출력
+	List<Notice>selectNoticeListByPage(Map<String, Object> map);
 }

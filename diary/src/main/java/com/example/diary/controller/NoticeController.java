@@ -25,6 +25,7 @@ public class NoticeController {
 	private NoticeService noticeService;
 	@Autowired
 	private CommentService commentService;
+
 	@GetMapping(value="/noticeList")
 	public String noticeList(Model model,
 			@RequestParam(defaultValue = "1") int currentPage,HttpSession session) {
@@ -63,9 +64,12 @@ public class NoticeController {
 		return "redirect:/noticeList";
 	}
 	@GetMapping(value = "/noticeOne")
-		public String selectNoticeOne(Model model, Notice paramNotice, Map<String, Object> paramMap, @RequestParam(defaultValue = "1") int currentPage) {
+		public String selectNoticeOne(HttpSession session, Model model, Notice paramNotice, Map<String, Object> paramMap, @RequestParam(defaultValue = "1") int currentPage) {
 
-		
+		// 비밀댓글 출력을 위한 세션 정보
+		Member member = (Member)session.getAttribute("loginMember");
+		model.addAttribute("Member", member);
+		System.out.println(member+"<--noticeController.secretmember");
 		//공지사항 
 		Notice resultNotice = this.noticeService.noticeOne(paramNotice);
 		System.out.println(resultNotice+"<--resultNotice");
