@@ -55,9 +55,7 @@ public class ScheduleService {
 		}
 		//스케줄 검색
 		public List<Schedule> getScheduleListByWord(String word, String memberId){
-				List<Schedule> list  = null;
-
-					list = scheduleMapper.selectScheduleListByWord(word, memberId);
+				List<Schedule> list  = scheduleMapper.selectScheduleListByWord(word, memberId);
 
 				return list;
 		}

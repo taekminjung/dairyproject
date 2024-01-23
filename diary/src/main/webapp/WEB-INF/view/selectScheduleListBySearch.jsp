@@ -53,6 +53,12 @@
 				<button class="btn-sm btn-outline-success" >검색</button>
 			</form>
 		</div><br>
+		<div>
+		<form action="${pageContext.request.contextPath }/scheduleListByWord" method="get">
+		<input type="text" name="word">
+		<button class="btn-sm btn-outline-success" >검색</button>
+		</form>
+		</div><br>
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<tr>
 				<th>번호</th>

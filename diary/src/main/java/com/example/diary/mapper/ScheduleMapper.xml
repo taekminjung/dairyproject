@@ -28,13 +28,11 @@ SELECT schedule_no scheduleNo, schedule_date scheduleDate, schedule_memo schedul
 <select id="selectScheduleListByWord" parameterType="String" resultType="com.example.diary.vo.Schedule">
 			SELECT 
 			schedule_no scheduleNo,
-			schedule_memo scheduleMemo
+			schedule_memo scheduleMemo,
+			schedule_date scheduleDate
 			 FROM schedule 
-			<where>
-					<if test=" word  != ' ' ">
-						 schedule_memo LIKE CONCAT('%', #{word}, '%') 
-					</if>
-			</where>
+			WHERE
+			schedule_memo LIKE CONCAT('%', #{word}, '%')  AND member_id =#{memberId}
 			LIMIT 0, 10
 </select>
  <select id="selectScheduleMaxYear" resultType="Integer">

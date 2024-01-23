@@ -88,7 +88,7 @@ public class ScheduleController {
 			String memberId = ( (Member)session.getAttribute("loginMember")).getMemberId();
 			List<Schedule> list = scheduleService.getScheduleListByWord(word, memberId);
 			model.addAttribute("list", list);
-		return "scheduleListByWord";
+		return "selectScheduleListBySearch";
 	}
 	//연월일로 검색
 		@GetMapping("/selectScheduleListBySearch")
