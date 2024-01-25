@@ -21,6 +21,10 @@ public interface NoticeMapper {
 	int deleteNotice(Notice notice);
 	//수정
 	int updateNotice(Notice notice);
+	//댓글 삭제
+	int deleteComment(Notice notice);
+	//공지사항 댓글 확인
+	int selectComment();
 	//공지사항 상세보기에 댓글리스트 출력
 	List<Comment> selectCommentList(Map<String, Object> paramMap) ;
 	//공지사항에 첨부파일 갯수 출력

@@ -97,7 +97,7 @@ public class NoticeController {
 	}
 	@PostMapping(value="/deleteNotice")
 		public String deleteNotice(Notice notice) {
-			int row = noticeService.deleteNotice(notice);
+			noticeService.deleteNotice(notice);
 			return "redirect:/noticeList";
 		}
 	@GetMapping(value="updateNotice")

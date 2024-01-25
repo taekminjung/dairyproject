@@ -18,7 +18,7 @@
 </head>
 <body style="text-align: center;">
 	<h1> 공지사항 삭제</h1>
-		<form method="post">
+		<form action=" ${pageContext.request.contextPath}/deleteNotice"method="post">
 			<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 				<tr>
 					<td><input type="text" name=noticePw></td>

@@ -85,14 +85,16 @@ public class ScheduleController {
 	//스케줄 검색 기능
 	@GetMapping("/scheduleListByWord")
 	public String scheduleListByWord(Model model, @RequestParam(defaultValue = "") String word, HttpSession session) {
+		Map<String, Integer> maxMinMap = scheduleService.getScheduleYearMaxMin();
 			String memberId = ( (Member)session.getAttribute("loginMember")).getMemberId();
 			List<Schedule> list = scheduleService.getScheduleListByWord(word, memberId);
+			model.addAttribute("maxMinMap", maxMinMap);
 			model.addAttribute("list", list);
 		return "selectScheduleListBySearch";
 	}
 	//연월일로 검색
 		@GetMapping("/selectScheduleListBySearch")
-		public String selectScheduleListBySearch(Model model, HttpSession session,
+		public String selectScheduleListBySearch(Model model, HttpSession session, String word,
 										@RequestParam(defaultValue = "1")int currentPage,
 										@RequestParam(defaultValue = "")String year,
 										@RequestParam(defaultValue = "")String month,

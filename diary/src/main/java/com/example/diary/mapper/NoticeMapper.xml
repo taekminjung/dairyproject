@@ -27,4 +27,13 @@
 	<update id="updateNotice">
 	UPDATE notice SET notice_title = #{noticeTitle}, notice_content = #{noticeContent} WHERE notice_no = #{noticeNo} AND notice_pw = #{noticePw}
 	</update>
+	<select id="selectComment">
+		SELECT COUNT(*)
+		FROM comment
+	</select>
+	<delete id="deleteComment" parameterType="com.example.diary.vo.Notice">
+		DELETE 
+		FROM comment
+		WHERE notice_no =	#{noticeNo}
+	</delete>
 </mapper>

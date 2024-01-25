@@ -35,9 +35,15 @@ public class NoticeService {
 		  return 0;
 	  }
 	  //공지사항 삭제
-	  public int deleteNotice(Notice notice) {
-		  int row = noticeMapper.deleteNotice(notice);
-		  return row;
+	  public void deleteNotice(Notice notice) {
+		  int row = noticeMapper.selectComment();
+		  if(row != 0) {
+			  noticeMapper.deleteComment(notice);
+			  noticeMapper.deleteNotice(notice);
+		  }
+		  noticeMapper.deleteNotice(notice);
+		   
+		  ;
 	  }
 	  //공지사항 수정
 	  public int updateNotice(Notice notice) {
