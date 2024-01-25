@@ -61,7 +61,7 @@
 						<c:if test="${d < 1 || d > calendarMap.lastDate}">
 							&nbsp;
 						</c:if>
-						<c:if test="${!(d < 1 || d > lastDay)}">
+						<c:if test="${!(d < 1 || d > calendarMap.lastDate)}">
 							
 							<a href="${pageContext.request.contextPath}/ScheduleList?targetY=${calendarMap.targetY}&targetM=${calendarMap.targetM+1}&targetD=${d}">
 								<span>${d}</span>

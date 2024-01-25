@@ -51,6 +51,9 @@ public class ScheduleController {
 		//스케줄 추가
 	@PostMapping(value="insertSchedule")
 	public String insertSchedule(HttpSession session, Schedule schedule, Model model,int targetY, int targetM, int targetD) {
+		if(session.getAttribute("loginMember")== null) {
+			return "login";
+		}
 		LocalDate date = LocalDate.of(targetY, targetM, targetD);
 		String scheduleDate = date.toString();
 		schedule.setScheduleDate(scheduleDate);
@@ -63,6 +66,9 @@ public class ScheduleController {
 	//스케줄 수정
 	@GetMapping(value= "updateSchedule")
 		public String updateSchedule(HttpSession session, int scheduleNo, int targetY, int targetM, int targetD,Model model) {
+		if(session.getAttribute("loginMember")== null) {
+			return "login";
+		}
 		model.addAttribute("targetY", targetY);
 		model.addAttribute("targetM", targetM);
 		model.addAttribute("targetD", targetD);
@@ -71,6 +77,9 @@ public class ScheduleController {
 	}
 	@PostMapping(value= "updateSchedule")
 	 	public String updateSchedule(HttpSession session, Schedule schedule, int targetY, int targetM, int targetD, int scheduleNo, Model model) {
+		if(session.getAttribute("loginMember")== null) {
+			return "login";
+		}
 		String memberId = ( (Member)session.getAttribute("loginMember")).getMemberId();
 		schedule.setMemberId(memberId);
 		LocalDate date = LocalDate.of(targetY, targetM, targetD);
@@ -83,14 +92,28 @@ public class ScheduleController {
 		return A;
 	}
 	//스케줄 검색 기능
-	@GetMapping("/scheduleListByWord")
-	public String scheduleListByWord(Model model, @RequestParam(defaultValue = "") String word, HttpSession session) {
+	@GetMapping("/selectScheduleListByWord")
+	public String scheduleListByWord(Model model, @RequestParam(defaultValue = "") String word, HttpSession session,
+																			@RequestParam(defaultValue = "1")int currentPage,
+																			@RequestParam(defaultValue = "")String year,
+																			@RequestParam(defaultValue = "")String month,
+																			@RequestParam(defaultValue = "")String date) {
+		if(session.getAttribute("loginMember")== null) {
+			return "login";
+		}
 		Map<String, Integer> maxMinMap = scheduleService.getScheduleYearMaxMin();
 			String memberId = ( (Member)session.getAttribute("loginMember")).getMemberId();
 			List<Schedule> list = scheduleService.getScheduleListByWord(word, memberId);
+			int lastPage = scheduleService.getScheduleListByYMDCnt(year, month, date);
+			System.out.println(maxMinMap+"<=============");
 			model.addAttribute("maxMinMap", maxMinMap);
 			model.addAttribute("list", list);
-		return "selectScheduleListBySearch";
+			model.addAttribute("lastPage", lastPage);
+			model.addAttribute("currentPage", currentPage);
+			model.addAttribute("year", year);
+			model.addAttribute("month", month);
+			model.addAttribute("date", date);
+		return "/selectScheduleListBySearch";
 	}
 	//연월일로 검색
 		@GetMapping("/selectScheduleListBySearch")
@@ -99,6 +122,9 @@ public class ScheduleController {
 										@RequestParam(defaultValue = "")String year,
 										@RequestParam(defaultValue = "")String month,
 										@RequestParam(defaultValue = "")String date) {
+			if(session.getAttribute("loginMember")== null) {
+				return "login";
+			}
 			// scheduleService 호출
 			Map<String, Integer> maxMinMap = scheduleService.getScheduleYearMaxMin();
 			String memberId = ( (Member)session.getAttribute("loginMember")).getMemberId();
