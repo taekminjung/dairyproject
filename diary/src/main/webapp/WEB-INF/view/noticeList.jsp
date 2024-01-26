@@ -44,11 +44,11 @@
 	</div>
 	<div>&nbsp;</div>
 	<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
-					<tr>
+					<thead class="table-success">
 					<th >NO</th>
 					<th >제목</th>
 					<th>수정/삭제</th>
-				</tr>
+					</thead>
 				<c:forEach var="n" items="${list}">
 				<tr>
 					<td>${n.getNoticeNo()}</td>
@@ -70,10 +70,10 @@
 		<c:if test="${loginMember.memberLevel eq 1}">
 			<form action="${pageContext.request.contextPath}/addNotice" method="post">
 			<div style="text-align: center;">
-				제목:<input type="text" name="noticeTitle">
+				제목:<input type="text" name="noticeTitle" style="border:1; border-radius:15px;">
 				</div>
 			<div style="text-align: center;">
-				<textarea rows="10" cols="150" name="noticeContent" ></textarea>
+				<textarea rows="10" cols="150" name="noticeContent"  style="border:1; border-radius:15px; "></textarea>
 			</div>
 			<div style="text-align: center;">
 				비밀번호:<input type="text" name="noticePw">
