@@ -3,6 +3,71 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <html>
 <head>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+* { padding: 0; margin: 0; }
+
+html, body {
+  height: 100%;
+  background: #ffffff;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#addMemberBox {
+  width: 300px;
+  text-align: center;
+  background-color: #ffffff;
+}
+.input-form-box {
+  border: 0px solid #ff0000;
+  display: flex;
+  margin-bottom: 5px;
+}
+.input-form-box > span {
+  display: block;
+  text-align: left;
+  padding-top: 5px;
+  min-width: 65px;
+}
+.button-login-box {
+  margin: 10px 0;
+}
+#addMemberTitle {
+  color:#000000;
+  font-weight: bold;
+  font-size: 32px;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #270a09, #8ca6ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#inputBox {
+  margin: 10px;
+}
+
+#inputBox button {
+  padding: 3px 5px;
+}
+</style>
+   <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- 나의 스타일 추가 -->
+    <link rel="stylesheet" href="css/login.css?v=1234">
+
   <!-- [jQuery] -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
@@ -18,16 +83,18 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.7.1.min.js">
 </script>
 </head>
-<body>
-	<h1>회원가입</h1><a href="${pageContext.request.contextPath }/login" class="btn btn-outline-success" >로그인화면</a>
+<body class="text-center">
+	<div id="container">
+	<div id="addMemberBox">
+	<div id="addMemberTitle">회원가입</div>
 	<form method="post" action="${pageContext.request.contextPath}/addMember">
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<tr>
-				<td width="10%">아이디</td>
+				<td width="30%">아이디</td>
 				<td><input type="text" id="memberId" name="memberId" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
 			</tr>
 			<tr>
@@ -39,9 +106,11 @@
 				<td><input type="password" id="memberPw2" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
 			</tr>
 		</table>
-		<button id="addBtn" class="btn btn-outline-success" >회원가입</button>
+		<button id="addBtn" class="btn btn-outline-success" style="width:100%">회원가입</button>
 	</form>
-	
+	<br><a href="${pageContext.request.contextPath }/login" class="btn btn-outline-success" style="width:100%">로그인화면</a>
+	</div>
+	</div>
 </body>
 
 <script type="text/javascript">
