@@ -14,16 +14,17 @@ pageEncoding="UTF-8"%>
 <body style="text-align: center;">
 <h1>안녕하세요 <mark>${loginMember.memberId}</mark>님</h1>
 	<h2>선택하신${targetY}년 ${targetM}월 ${targetD}일의  ${scheduleNo}번 일정을 수정해주세요</h2>
-	<a href="${pageContext.request.contextPath}/home" class="button">홈으로</a>
+	<a href="${pageContext.request.contextPath}/home" class="btn btn-outline-success">홈으로</a>
 	<br>
-	
 	<table class="table table-bordered">
 		<form action="${pageContext.request.contextPath}/updateSchedule?scheduleNo=${scheduleNo}" method="post">
 		<input type="hidden" name="targetY" value="${targetY}">
 		<input type="hidden" name="targetM" value="${targetM}">
 		<input type="hidden" name="targetD" value="${targetD}">
-		<textarea rows="10" cols="100" name="scheduleMemo"></textarea>
-		<button type="submit">일정 수정</button>
+		<input type="text" value="${map.scheduleDate}" readonly style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"><br>
+		<textarea rows="10" cols="100" name="scheduleMemo" placeholder="${map.scheduleMemo}" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></textarea>
+		<br>
+		<button type="submit" class="btn btn-outline-success">일정 수정</button>
 		</form>
 	</table>
 </body>

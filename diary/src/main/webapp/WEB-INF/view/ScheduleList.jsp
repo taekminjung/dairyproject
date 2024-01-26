@@ -33,12 +33,12 @@
 	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
 	</div>
 	<table class="table table-bordered">
-			<tr>
-					<th>일</th>
+			<thead class="table-success">
+					<th>일자</th>
 					<th>일정번호</th>
 					<th>일정 내용</th>
 					<th>수정/삭제</th>	
-			</tr>
+			</thead>
 		<c:forEach var="m" items="${list}">
 		<tr>
 			<td>${targetD}일</td>
@@ -55,7 +55,7 @@
 	<input type="hidden" name="targetY" value="${targetY}">
 	<input type="hidden" name="targetM" value="${targetM}">
 	<input type="hidden" name="targetD" value="${targetD}">
-	<textarea rows="10" cols="150" name="scheduleMemo"></textarea>
+	<textarea rows="10" cols="150" name="scheduleMemo" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></textarea>
 	<div><button class="btn-sm btn-outline-success"  type="submit">일정 추가</button></div>
 	</form>
 	</div>

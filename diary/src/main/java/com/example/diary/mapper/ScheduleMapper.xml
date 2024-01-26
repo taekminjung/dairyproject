@@ -96,4 +96,11 @@ SELECT schedule_no scheduleNo, schedule_date scheduleDate, schedule_memo schedul
 			</choose>
 		</where>
 	</select>
+	<select id="selectScheduleOne">
+		SELECT
+			schedule_memo AS scheduleMemo,
+			schedule_date AS scheduleDate
+		FROM schedule
+		WHERE schedule_no = #{scheduleNo}
+	</select>
 </mapper>

@@ -19,13 +19,13 @@
 		<div><h1>비밀번호 수정</h1></div>
 		<form method="post">
 			<table align= "center">
-			<tr>
+			<thead class="table-success">
 				<th>현재 비밀번호</th>
 				<th>변경할 비밀번호</th>
-			</tr>
+			</thead>
 			<tr>
-				<td><input type="text" name="memberPw"></td>
-				<td><input type="text" name="newMemberPw"></td>
+				<td><input type="text" name="memberPw" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
+				<td><input type="text" name="newMemberPw" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
 			</tr>
 			</table>
 			<button class="btn btn-outline-success" >변경하기</button>

@@ -43,6 +43,7 @@
 	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
 	</div>
 	<div>&nbsp;</div>
+	<section>
 	<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 					<thead class="table-success">
 					<th >NO</th>
@@ -67,16 +68,17 @@
 		<a href="${pageContext.request.contextPath}/noticeList?currentPage=${currentPage - 1}" class="btn-sm btn-outline-success"  >이전</a>
 		</c:if>
 		<a href="${pageContext.request.contextPath}/noticeList?currentPage=${currentPage + 1}" class="btn-sm btn-outline-success"  >다음</a>
+		<div>&nbsp;</div>
 		<c:if test="${loginMember.memberLevel eq 1}">
 			<form action="${pageContext.request.contextPath}/addNotice" method="post">
 			<div style="text-align: center;">
-				제목:<input type="text" name="noticeTitle" style="border:1; border-radius:15px;">
-				</div>
+				제목:<input type="text" name="noticeTitle" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)">
+				</div><br>
 			<div style="text-align: center;">
-				<textarea rows="10" cols="150" name="noticeContent"  style="border:1; border-radius:15px; "></textarea>
+				<textarea rows="10" cols="150" name="noticeContent"  style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></textarea>
 			</div>
 			<div style="text-align: center;">
-				비밀번호:<input type="text" name="noticePw">
+				비밀번호:<input type="text" name="noticePw" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)">
 				</div>
 			<div style="text-align: center;">
 				<button class="btn btn-outline-success"  type="submit">공지사항 추가</button>

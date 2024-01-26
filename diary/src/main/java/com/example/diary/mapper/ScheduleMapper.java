@@ -1,5 +1,6 @@
 package com.example.diary.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,8 @@ public interface ScheduleMapper {
 			
 			List<Map<String, Object>> ScheduleList(Map<String, Object> map);
 			
+			//수정폼에 수정 전 내용 출력
+			HashMap<String, Object> selectScheduleOne(Schedule schedule);
 			//삭제
 			int deleteSchedule(Schedule schedule);
 			//추가

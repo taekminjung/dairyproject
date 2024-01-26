@@ -128,4 +128,9 @@ public class ScheduleService {
 			
 			return lastPage;
 		}
+		public HashMap<String, Object> selectScheduleOne(Schedule schedule){
+			HashMap<String, Object> map = scheduleMapper.selectScheduleOne(schedule);
+			
+			return map;
+		}
 }

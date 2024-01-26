@@ -65,14 +65,17 @@ public class ScheduleController {
 	}
 	//스케줄 수정
 	@GetMapping(value= "updateSchedule")
-		public String updateSchedule(HttpSession session, int scheduleNo, int targetY, int targetM, int targetD,Model model) {
+		public String updateSchedule(HttpSession session, Schedule schedule, int targetY, int targetM, int targetD,Model model) {
 		if(session.getAttribute("loginMember")== null) {
 			return "login";
 		}
+		Map<String, Object> map = scheduleService.selectScheduleOne(schedule);
+		
+		model.addAttribute("map", map);
 		model.addAttribute("targetY", targetY);
 		model.addAttribute("targetM", targetM);
 		model.addAttribute("targetD", targetD);
-		model.addAttribute("scheduleNo", scheduleNo);
+		model.addAttribute("scheduleNo", schedule.getScheduleNo());
 		return "updateSchedule";
 	}
 	@PostMapping(value= "updateSchedule")

@@ -55,16 +55,16 @@
 		</div><br>
 		<div>
 		<form action="${pageContext.request.contextPath }/selectScheduleListByWord" method="get">
-		<input type="text" name="word">
+		<span class="badge badge-success">검색</span><input type="text" name="word" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)">
 		<button class="btn-sm btn-outline-success" >검색</button>
 		</form>
-		</div><br><span>현재 페이지: <mark>${currentPage}</mark></span>
+		</div><br>
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
-			<tr>
+			<thead class="table-success">
 				<th>번호</th>
 				<th>날짜</th>
 				<th>내용</th>
-			</tr>
+			</thead>
 			<c:forEach var="s" items="${list }">
 				<tr>
 					<td>${s.scheduleNo }</td>
@@ -86,6 +86,7 @@
 			<c:if test="${!(currentPage < lastPage)}">
 				<button class="btn-sm btn-outline-success"  disabled>다음</button>
 			</c:if>
+			<div>현재 페이지: <span class="badge badge-success">${currentPage}</span></div>
 		</div>
 	</div>
 </body>
