@@ -80,6 +80,7 @@
 			<div style="text-align: center;">
 				비밀번호:<input type="text" name="noticePw" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)">
 				</div>
+				<br>
 			<div style="text-align: center;">
 				<button class="btn btn-outline-success"  type="submit">공지사항 추가</button>
 			</div>

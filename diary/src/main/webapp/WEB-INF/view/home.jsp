@@ -42,6 +42,7 @@
 			</c:url>
 			<a href="${nextUrl}" class="btn-sm btn-outline-success" >다음달</a>
 		</div>
+		<div class="container">
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;" >
 		  <thead class="table-success">
 			<tr>
@@ -83,6 +84,6 @@
 				</c:forEach>
 			</tr>
 		</table>
-	
+	</div>
 </body>
 </html>

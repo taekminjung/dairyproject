@@ -23,25 +23,25 @@
 </script>
 </head>
 <body>
-	<h1>회원가입</h1>
+	<h1>회원가입</h1><a href="${pageContext.request.contextPath }/login" class="btn btn-outline-success" >로그인화면</a>
 	<form method="post" action="${pageContext.request.contextPath}/addMember">
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<tr>
 				<td width="10%">아이디</td>
-				<td><input type="text" id="memberId" name="memberId"></td>
+				<td><input type="text" id="memberId" name="memberId" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
 			</tr>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" id="memberPw" name="memberPw"></td>
+				<td><input type="password" id="memberPw" name="memberPw" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
 			</tr>
 			<tr>
 				<td>비밀번호 확인</td>
-				<td><input type="password" id="memberPw2"></td>
+				<td><input type="password" id="memberPw2" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></td>
 			</tr>
 		</table>
-		<button id="addBtn" class="btn btn-outline-info">회원가입</button>
+		<button id="addBtn" class="btn btn-outline-success" >회원가입</button>
 	</form>
-	<a href="${pageContext.request.contextPath }/login">로그인화면</a>
+	
 </body>
 
 <script type="text/javascript">
