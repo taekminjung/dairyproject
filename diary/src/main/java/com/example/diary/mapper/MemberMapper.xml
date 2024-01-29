@@ -20,4 +20,9 @@
 	<update id="updatePw">
 		UPDATE member SET member_pw = PASSWORD(#{newMemberPw}) WHERE member_no=#{memberNo} AND member_pw=PASSWORD(#{memberPw})
 	</update>
+	<select id="idCheck" parameterType="com.example.diary.vo.Member" resultType="int">
+	SELECT COUNT(*)
+	FROM member
+	WHERE member_id = #{memberId}
+	</select>
 </mapper>

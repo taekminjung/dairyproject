@@ -15,5 +15,6 @@ public interface MemberMapper {
 			int insertMember(Member member) ;
 			//비밀번호 수정
 			int updatePw(Map<String, Object> MemberPwMap);
-			
+			//idCheck
+			int idCheck(Member member);
 }

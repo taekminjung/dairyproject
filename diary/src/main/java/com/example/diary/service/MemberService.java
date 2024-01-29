@@ -30,4 +30,9 @@ public class MemberService {
 			return memberMapper.updatePw(paramMap);
 			
 		}
+		//idCheck
+		public int idCheck(Member member) {
+			
+			return memberMapper.idCheck(member);
+		}
 }
