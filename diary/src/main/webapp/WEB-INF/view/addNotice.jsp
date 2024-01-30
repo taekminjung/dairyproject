@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항 추가 </title>
 </head>
 <body>
 		<h1>공지 추가</h1>

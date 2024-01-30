@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>일정 수정</title>
 </head>
 <body style="text-align: center;">
 <h1>안녕하세요 <mark>${loginMember.memberId}</mark>님</h1>

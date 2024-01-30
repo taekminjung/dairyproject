@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>일정 검색</title>
   <!-- [jQuery] -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
