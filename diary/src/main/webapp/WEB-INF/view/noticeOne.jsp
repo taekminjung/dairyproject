@@ -22,14 +22,15 @@
 	<h2>공지 상세보기</h2>
 	<a href="${pageContext.request.contextPath }/home" class="btn btn-outline-success" >홈으로</a>
 	<a href="${pageContext.request.contextPath }/logout" class="btn btn-outline-success" >로그아웃</a>
+	<div>&nbsp;</div>
 		<table  class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
-			<tr>
+			<thead class="table-success">
 				<th width="10%">번호</th>
 				<th width="30%">제목</th>
 				<th width="30%">내용</th>
 				<th width="20%">작성일</th>
 				
-			</tr>
+			</thead>
 			<tr>
 				<td>${ resultNotice.getNoticeNo()}</td>
 				<td>${ resultNotice.getNoticeTitle()}</td>
@@ -39,12 +40,12 @@
 		</table>
 		<h4> 댓글</h4>
 		<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
-			<tr>
+			<thead class="table-success">
 				<th width="5%">댓글 번호</th>
 				<th width="30%">댓글 내용</th>
 				<th width="5%">댓글 수정</th>
 				<th width="5%">댓글 삭제</th>
-			</tr>
+			</thead>
 			<c:forEach var="c" items="${com}">
 		<c:choose>
 		<c:when test="${c.isSecret =='N' }">
@@ -75,7 +76,7 @@
 			</c:forEach>
 
 		</table>
-
+<div>&nbsp;</div>
 		<h1> 댓글 추가하기</h1>
 			<form action="${pageContext.request.contextPath}/addComment" method="post" >
 			<input type="hidden" name="noticeNo" value="${ resultNotice.getNoticeNo()}">

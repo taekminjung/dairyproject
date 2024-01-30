@@ -43,7 +43,7 @@
 	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
 	</div>
 	<div>&nbsp;</div>
-	<section>
+	<div class="container">
 	<table class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 					<thead class="table-success">
 					<th >NO</th>
@@ -86,5 +86,6 @@
 			</div>
 			</form>
 		  </c:if>
+		  </div>
 </body>
 </html>
