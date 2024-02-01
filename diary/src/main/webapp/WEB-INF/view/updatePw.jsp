@@ -30,5 +30,6 @@
 			</table>
 			<button class="btn btn-outline-success" >변경하기</button>
 		</form>
+		<button class="btn btn-outline-success"  onclick="history.back()">뒤로가기</button>
 </body>
 </html>

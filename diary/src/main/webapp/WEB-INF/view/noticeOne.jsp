@@ -22,6 +22,7 @@
 	<h2>공지 상세보기</h2>
 	<a href="${pageContext.request.contextPath }/home" class="btn btn-outline-success" >홈으로</a>
 	<a href="${pageContext.request.contextPath }/logout" class="btn btn-outline-success" >로그아웃</a>
+	<button class="btn btn-outline-success"  onclick="history.back()">뒤로가기</button>
 	<div>&nbsp;</div>
 		<table  class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<thead class="table-success">
@@ -88,7 +89,7 @@
                     <textarea rows="5" cols="50" id="commentContent" name="commentContent" class="form-control" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="isSecret" class="form-label">비밀글 :</label>
+                    <label for="isSecret" class="form-label">비밀댓글 : </label>
                     <select class="form-select" id="isSecret" name="isSecret">
                         <option value="Y">비밀</option>
                         <option value="N">공개</option>

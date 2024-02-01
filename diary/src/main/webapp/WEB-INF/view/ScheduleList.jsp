@@ -31,6 +31,7 @@
 	<a href="${pageContext.request.contextPath}/noticeList" class="btn btn-outline-success" >공지사항</a>
 	<a href="${pageContext.request.contextPath}/updatePw"  class="btn btn-outline-success" >비밀번호 수정</a>
 	<a href="${pageContext.request.contextPath}/logout"  class="btn btn-outline-success"  >로그아웃</a>
+	<button class="btn btn-outline-success"  onclick="history.back()">뒤로가기</button>
 	</div>
 	<table class="table table-bordered">
 			<thead class="table-success">

@@ -30,7 +30,7 @@
 </style>
 </head>
 <body style="text-align: center;">
-	<h1 >댓글 수정</h1>
+	<h1 >댓글 수정</h1><button class="btn btn-outline-success"  onclick="history.back()">뒤로가기</button>
 		<table  class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
 			<thead class="table-success">
 				<th>댓글 번호</th>

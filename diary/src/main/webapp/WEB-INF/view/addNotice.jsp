@@ -8,6 +8,7 @@
 </head>
 <body>
 		<h1>공지 추가</h1>
+		<button class="btn btn-outline-success"  onclick="history.back()">뒤로가기</button>
 	<form method="post" action="${pageContext.request.contextPath}/addNotice">
 		<table border="1">
 			<tr>
