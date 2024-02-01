@@ -80,19 +80,24 @@
 		<h1> 댓글 추가하기</h1>
 			<form action="${pageContext.request.contextPath}/addComment" method="post" >
 			<input type="hidden" name="noticeNo" value="${ resultNotice.getNoticeNo()}">
-				<table>
-						<tr >
-						<td><textarea rows="5" cols="258"  name="commentContent"></textarea></td>
-						</tr>	
-						<tr>
-							<td>비밀글 여부: <select class="form-select" name="isSecret">
-							<option value="Y">Y</option>
-           				    <option value="N">N</option>
-							</select></td>
-						</tr>
-						
-				</table>
-				<button class="btn btn-outline-success" > 추가</button>
+			    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="commentContent" class="form-label">댓글 내용</label>
+                    <textarea rows="5" cols="50" id="commentContent" name="commentContent" class="form-control" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="isSecret" class="form-label">비밀글 :</label>
+                    <select class="form-select" id="isSecret" name="isSecret">
+                        <option value="Y">비밀</option>
+                        <option value="N">공개</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-outline-success">추가</button>
+            </div>
+        </div>
+    </div>
 			</form>
 
 </body>

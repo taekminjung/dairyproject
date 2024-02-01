@@ -32,10 +32,10 @@
 <body style="text-align: center;">
 	<h1 >댓글 수정</h1>
 		<table  class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
-			<tr>
+			<thead class="table-success">
 				<th>댓글 번호</th>
 				<th>현재 내용</th>
-			</tr>
+			</thead>
 			<tr>
 				<td>${resultC.getCommentNo()}</td>
 				<td>${resultC.getCommentContent()} </td>
@@ -43,17 +43,17 @@
 		</table>
 		<form method="post">
 		<table  class="table table-bordered" style = "table-layout: auto; width: 100%; height: 100%;table-layout: fixed;">
-				<tr>
+				<thead class="table-success">
 					<th>댓글 번호</th>
 					<th>내용 수정</th>
-				</tr>
+				</thead>
 				<tr>
 					<td>${resultC.getCommentNo()}</td>
-				   <td><textarea  name="commentContent"></textarea></td>
+				   <td><textarea  name="commentContent" style="border:0; border-radius:15px; outline: none;  background-color: rgb(245, 245, 245)" rows="2" cols="100"></textarea></td>
 				</tr>
 				<input type="hidden"  name="noticeNo"  value="${resultC.getNoticeNo()}">
 		</table>
-		<button  class="button">수정</button>
+		<button class="btn btn-outline-success" >수정</button>
 		</form>
 </body>
 </html>
